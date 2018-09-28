@@ -1,4 +1,12 @@
 ﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+.person-item {
+    padding: 10px;
+}
+
+.person-item-avatar {
+    border-radius: 50%;
+    max-width: 40px;
+}
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;

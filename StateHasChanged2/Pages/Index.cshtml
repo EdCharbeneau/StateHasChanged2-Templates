@@ -2,6 +2,21 @@
 
 <h1>Hello, world!</h1>
 
-Welcome to your new app.
+<ListView Items="@people" Context="person">
+    <div class="person-item">
+        <img alt="@person.FirstName + @person.LastName" class="person-item-avatar" src="@person.AvatarUrl" />
+        @person.FirstName, @person.LastName
+    </div>
+</ListView>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+@functions {
+
+    IEnumerable<Person> people;
+
+    protected override void OnInit()
+    {
+        GenFu.Configure<Person>()
+        .Fill(p => p.AvatarUrl, () => "https://via.placeholder.com/300");
+        people = A.ListOf<Person>();
+    }
+}
